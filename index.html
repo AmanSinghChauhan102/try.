@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCA Previous Year Papers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #1e88e5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #1976d2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: #1565c0;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .subject {
+      margin-bottom: 25px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    .subject h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #e3f2fd;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    li:hover {
+      background: #bbdefb;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d47a1;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav button {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .subject h3 {
+        font-size: 1.3em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BCA Previous Year Question Papers</h1>
+  </header>
+
+  <nav>
+    <button data-sem="sem1" class="active">Semester 1</button>
+    <button data-sem="sem2">Semester 2</button>
+    <button data-sem="sem3">Semester 3</button>
+    <button data-sem="sem4">Semester 4</button>
+    <button data-sem="sem5">Semester 5</button>
+    <button data-sem="sem6">Semester 6</button>
+  </nav>
+
+  <main>
+    <!-- Semester 1 -->
+    <section id="sem1" class="active">
+      <div class="subject">
+        <h3>C Language</h3>
+        <ul>
+          <li><a href="Profile.pdf" target="_blank">C Language 2021</a></li>
+          <li><a href="pdfs/c_language_2022.pdf" target="_blank">C Language 2022</a></li>
+          <li><a href="pdfs/c_language_2023.pdf" target="_blank">C Language 2023</a></li>
+          <li><a href="pdfs/c_language_2024.pdf" target="_blank">C Language 2024</a></li>
+          <li><a href="pdfs/c_language_2025.pdf" target="_blank">C Language 2025</a></li>
+        </ul>
+      </div>
+
+      <div class="subject">
+        <h3>Mathematics</h3>
+        <ul>
+          <li><a href="pdfs/mathematics_2021.pdf" target="_blank">Mathematics 2021</a></li>
+          <li><a href="pdfs/mathematics_2022.pdf" target="_blank">Mathematics 2022</a></li>
+          <li><a href="pdfs/mathematics_2023.pdf" target="_blank">Mathematics 2023</a></li>
+          <li><a href="pdfs/mathematics_2024.pdf" target="_blank">Mathematics 2024</a></li>
+          <li><a href="pdfs/mathematics_2025.pdf" target="_blank">Mathematics 2025</a></li>
+        </ul>
+      </div>
+
+      <!-- Add other subjects similarly -->
+    </section>
+
+    <!-- Template for other semesters -->
+    <section id="sem2">
+      <p>Coming soon...</p>
+    </section>
+    <section id="sem3"><p>Coming soon...</p></section>
+    <section id="sem4"><p>Coming soon...</p></section>
+    <section id="sem5"><p>Coming soon...</p></section>
+    <section id="sem6"><p>Coming soon...</p></section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('main section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.sem).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
